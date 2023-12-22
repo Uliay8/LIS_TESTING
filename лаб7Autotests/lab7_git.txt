@@ -1,0 +1,115 @@
+import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.Selenide;
+import org.junit.BeforeClass;
+import org.junit.jupiter.api.Test;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import static com.codeborne.selenide.Selenide.$x;
+import static com.codeborne.selenide.Selenide.open;
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class dff {
+
+    protected WebDriver driver;
+
+    @BeforeClass
+    static public void setupClass() {
+        WebDriverManager.chromedriver().setup();
+    }
+
+    @Test
+    public void tests(){
+        test01Open();
+        test02Company();
+        test03Installation();
+        test04Guarantees();
+        test05VK();
+        test01Open();
+        test06RomanCurtains();
+        test07VelvetWhite();
+        test08Favourites();
+        test09Comparison();
+        test10Zebra();
+    }
+
+    public void test01Open(){
+        Configuration.timeout = 50000;
+        open("https://svetlica-vrn.ru/");
+        Selenide.sleep(2000);
+//        WebDriverRunner.getWebDriver().manage().window().maximize();
+    }
+
+    public void test02Company(){
+        $x("//a[@href='/i/company/']").click();
+        Selenide.sleep(2000);
+    }
+
+    public void test03Installation(){
+        $x("//a[@href='/i/ustanovka/']").click();
+        Selenide.sleep(2000);
+    }
+
+    public void test04Guarantees(){
+        $x("//a[@href='/i/garantii/']").click();
+        Selenide.sleep(2000);
+    }
+
+    public void test05VK(){
+        $x("//a[@href='https://vk.com/svetlica36']").click();
+        Selenide.sleep(7000);
+        Selenide.closeWindow();
+//       WebDriverRunner.getWebDriver().switchTo();
+//        CloseOpenTab();
+    }
+
+//    public void CloseOpenTab(){
+//        for (String handle : WebDriverRunner.getWebDriver().getWindowHandles()){
+//            if (handle.equals(WebDriverRunner.getWebDriver().getWindowHandle())){
+//                WebDriverRunner.getWebDriver().close();
+//                break;
+//            }
+//        }
+//    }
+
+    public void test06RomanCurtains(){
+        $x("//a[@href='/category/rimskie-shtory/']").click();
+        Selenide.sleep(2000);
+    }
+
+    public void test07VelvetWhite(){
+        $x("//a[@href='/product/rimskie-shtory-velvet-beliy/']").click();
+        Selenide.sleep(2000);
+    }
+
+    public void test08Favourites(){
+        $x("//div[@class='product__fav-com-item p-favorit']").click();
+        Selenide.sleep(2000);
+    }
+
+    public void test09Comparison(){
+        $x("//div[@class='product__fav-com-item p-compare']").click();
+        Selenide.sleep(2000);
+    }
+
+    public void test10Zebra(){
+        $x("//a[@href='/category/rulonnye-shtory-den-noch-zebra/']").click();
+        Selenide.sleep(2000);
+    }
+
+    public void test11Zebra(){
+        $x("//a[@href='/category/rulonnye-shtory-den-noch-zebra/']").click();
+        Selenide.sleep(2000);
+    }
+
+}
+
+
+
+
+<dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>5.6.2</version>
+            <scope>test</scope>
+        </dependency>
